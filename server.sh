@@ -7,8 +7,10 @@ sudo apt update
 #cd first_backend/
 echo "PORT = 3000" > .env
 npm i
-sudo npm install -g pm2 
-sudo npm install -g npm@10.2.5
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install node
+npm install pm2 -g
 pm2 stop "Api_v1"
 pm2 start "npm start" --name "Api_v1"
 pm2 logs
