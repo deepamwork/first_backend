@@ -13,4 +13,3 @@ nvm install node
 npm install pm2 -g
 pm2 stop "Api_v1"
 pm2 start "npm start" --name "Api_v1"
-pm2 logs
