@@ -10,6 +10,6 @@ npm i
 #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 #source ~/.nvm/nvm.sh
 #nvm install node
-#npm install pm2 -g
+npm install pm2 -g
 pm2 stop "Api_v1"
 pm2 start "npm start" --name "Api_v1"
