@@ -12,17 +12,17 @@ npm i
 sudo rm -rf /usr/lib/node_modules/pm2
 sudo npm install pm2 -g
 
-pm2 start "npm start" --name "Api_v1"
+pm2 start "npm start" --name "Api_v2"
 
 # Get the process ID (PID) of the most recently started process
-latest_pid=$(pm2 prettylist | grep -E '"name":"Api_v1".*?"pm_id":([0-9]+)' | sed -E 's/.*"pm_id":([0-9]+),.*/\1/' | tail -n 1)
+latest_pid=$(pm2 prettylist | grep -E '"name":"Api_v2".*?"pm_id":([0-9]+)' | sed -E 's/.*"pm_id":([0-9]+),.*/\1/' | tail -n 1)
 
 # Stop and delete all processes except the most recently started one
 pm2 delete all
 pm2 resurrect $latest_pid
 
 # Save the current process list to ensure it is resurrected on system restart
-pm2 save
+#pm2 save
 
 # Ensure PM2 restarts on system boot
-pm2 startup
+#pm2 startup
